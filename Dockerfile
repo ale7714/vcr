@@ -4,7 +4,7 @@ FROM node:latest
 # set the loglevel for npm with environment variable
 ENV NPM_CONFIG_LOGLEVEL=warn
 ENV CC_TEST_REPORTER_ID=1967ebdbc2c824ed574b113599bd463448c5193f3353a4d808935e0547b4e8ca
-GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+
 language: ruby
 
 # Install Google Chrome
