@@ -35,7 +35,7 @@ RUN npm run testc
 
 #RUN sh -c './cc-test-reporter format-coverage --output "coverage/lcov.info"'
 
-RUN sh -c './cc-test-reporter after-build -d --exit-code 0 -t "lcov" '
+RUN sh -c './cc-test-reporter after-build --debug --exit-code 0 -t "lcov" '
 
 #RUN codeclimate-test-reporter < coverage/lcov.info
 
