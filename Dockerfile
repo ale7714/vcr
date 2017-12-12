@@ -3,7 +3,7 @@ FROM node:latest
 
 # set the loglevel for npm with environment variable
 ENV NPM_CONFIG_LOGLEVEL=warn
-ENV CC_TEST_REPORTER_ID=""
+ENV CC_TEST_REPORTER_ID=1967ebdbc2c824ed574b113599bd463448c5193f3353a4d808935e0547b4e8ca
 
 # Install Google Chrome
 # RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
@@ -33,9 +33,9 @@ RUN npm run testc
 # Installing Code Climate
 #RUN npm install -g codeclimate-test-reporter
 
-RUN sh -c './cc-test-reporter format-coverage --output "coverage/lcov.info"'
+#RUN sh -c './cc-test-reporter format-coverage --output "coverage/lcov.info"'
 
-# RUN sh -c './cc-test-reporter after-build --exit-code 0 -t "lcov" '
+RUN sh -c './cc-test-reporter after-build --exit-code 0 -t "lcov" '
 
 #RUN codeclimate-test-reporter < coverage/lcov.info
 
